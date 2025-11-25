@@ -57,6 +57,8 @@ End of the Tabs vs. Spaces War: Use tabs. Use spaces. Use a profane mixture of b
 1. Installation (Simple, because we are lazy, and frankly I did this with AI)
 Drop the ouroboros.py file into the root of your project. Done. You have installed the compiler. Congratulations, engineer.
 
+Copy the `.vscode` folder from this repository to your project root to enable recommended IDE settings (e.g., syntax highlighting, formatting).
+
 2. Running a script
 Forget python script.py. You are part of the cult now.
 
@@ -150,6 +152,8 @@ Fim da Guerra Tabs vs. Spaces: Use tabs. Use espaços. Use uma mistura profana d
 ## Como Usar
 1. Instalação (Simples, porque somos preguiçosos, e sem tempo aliás fiz isso com IA)
 Jogue o arquivo ouroboros.py na raiz do seu projeto. Pronto. Você instalou o compilador. Parabéns, engenheiro.
+
+Não esqueça da pasta .vscode para o IntelliSense não ficar te enchendo o saco.
 
 2. Rodando um script
 Esqueça o python script.py. Agora você é parte da seita.

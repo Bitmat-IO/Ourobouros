@@ -1,9 +1,49 @@
 {
+    // 1. A Falsidade Ideológica
+    // Dizemos que .or É python, assim o IntelliSense liga
     "files.associations": {
-        "*.or": "ruby" 
+        "*.or": "python"
     },
-    "editor.formatOnSave": false, // Desliga o formatador nativo para não brigar com o nosso
-    "[ruby]": {
-        "editor.defaultFormatter": null // Garante que o formatador de Ruby não tente estragar seu código
-    }
+
+    // 2. O Formatador (Crucial)
+    // Isso garante que o código esteja indentado para o Pylance entender o escopo
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": "\\.or$",
+                "cmd": "python \"${workspaceFolder}/ouroboros.py\" format \"${file}\""
+            }
+        ]
+    },
+
+    // 3. A Maquiagem (Pintar o 'end' de Roxo/Rosa)
+    // Como para o Python 'end' é uma variável, ele fica branco/azul.
+    // Isso força ele a parecer uma keyword de controle (como if/def).
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "source.python",
+                "settings": {
+                    "foreground": "#569CD6" // Cor padrão, ajustável
+                }
+            },
+            {
+                // Acha a variável 'end' e finge que ela é uma keyword
+                "scope": "variable.other.readwrite", 
+                "settings": {
+                    "foreground": "#569CD6", // Roxo do VS Code Dark
+                    "fontStyle": "bold"
+                }
+            }
+        ]
+    },
+
+    // 4. O Cala a Boca (Silenciar o erro do 'end')
+    // O Pylance vai gritar que "end" não está definido. Nós dizemos: "Eu sei, cale-se."
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportUndefinedVariable": "none" // "none" = some completamente, "information" = vira aviso azul
+    },
+    
+    // Opcional: Adiciona 'end' como uma variável global fake para o Pylance
+    // (Isso exige criar um arquivo .pyi ou configuração extra, mas o override acima já resolve 90%)
 }
