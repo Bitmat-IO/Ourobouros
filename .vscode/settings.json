@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "*.or": "ruby" 
+    },
+    "editor.formatOnSave": false, // Desliga o formatador nativo para não brigar com o nosso
+    "[ruby]": {
+        "editor.defaultFormatter": null // Garante que o formatador de Ruby não tente estragar seu código
+    }
+}
